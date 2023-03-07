@@ -12,7 +12,9 @@ jobs:
       - name: Create uuid
         id: uuid
         run: | 
-            echo "uuid=$(uuidgen)" >> $GITHUB_OUTPUT
+          uuid=$(uuid)
+          echo ${uuid}
+          echo "uuid=${uuid}" >> $GITHUB_OUTPUT
 
   upload:
     runs-on: ubuntu-latest
