@@ -6,4 +6,7 @@ on:
 
 jobs:
   call-workflow:
+    strategy:
+      matrix:
+        version: [1, 2, 3] # unused
     uses: ./.github/workflows/reusable.yml

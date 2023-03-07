@@ -24,7 +24,7 @@ jobs:
       - name: Upload
         uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3.1.2
         with:
-          name: "example.txt-${{ needs.uuid.outputs.uuid }}"
+          name: "example-${{ needs.uuid.outputs.uuid }}"
           path: "example.txt"
           if-no-files-found: error
           retention-days: 5
@@ -35,7 +35,7 @@ jobs:
     steps:
       - uses: actions/download-artifact@v3
         with:
-          name: "example.txt-${{ needs.uuid.outputs.uuid }}"
-          path: example.txt
+          name: "example-${{ needs.uuid.outputs.uuid }}"
+          path: example
       - run: |
-          cat example.txt
+          ls example
